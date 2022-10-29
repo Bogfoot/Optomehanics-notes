@@ -1,0 +1,9 @@
+\babel@toc {croatian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {croatian}{}\relax 
+\contentsline {section}{\numberline {1}Osnovna svojstva}{1}{section.1}%
+\contentsline {section}{\numberline {2}Uvod1}{2}{section.2}%
+\contentsline {section}{\numberline {3}Uvod2}{3}{section.3}%
+\contentsline {section}{\numberline {4}Uvod3}{4}{section.4}%
+\contentsline {section}{\numberline {5}Uvod4}{5}{section.5}%
+\contentsfinish 
