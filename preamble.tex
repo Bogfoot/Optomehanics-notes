@@ -165,3 +165,67 @@
 	\begin{mdframed}[]\relax%
 		\label{#2}}{\qed\end{mdframed}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Primjer
+\newcounter{primjer}[section]\setcounter{primjer}{0}
+\renewcommand{\theprimjer}{\arabic{section}.\arabic{primjer}}
+\newenvironment{primjer}[2][]{%
+	\refstepcounter{primjer}%
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={%
+					\tikz[baseline=(current bounding box.east),outer sep=0pt]
+					\node[anchor=east,rectangle,fill=red!20]
+					{\strut Primjer~\theprf};}}
+	}%
+	{\mdfsetup{%
+			frametitle={%
+					\tikz[baseline=(current bounding box.east),outer sep=0pt]
+					\node[anchor=east,rectangle,fill=red!20]
+					{\strut Primjer~\theprf:~#1};}}%
+	}%
+	\mdfsetup{innertopmargin=10pt,linecolor=red!20,%
+		linewidth=2pt,topline=true,%
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+	}
+	\begin{mdframed}[]\relax%
+		\label{#2}}{\qed\end{mdframed}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%================================
+% NOTE BOX
+%================================
+
+\usetikzlibrary{arrows,calc,shadows.blur}
+\tcbuselibrary{skins}
+\newtcolorbox{Bilješka}[1][]{%
+	enhanced jigsaw,
+	colback=gray!20!white,%
+	colframe=gray!80!black,
+	size=small,
+	boxrule=1pt,
+	title=Bilješka,
+	halign title=flush center,
+	coltitle=black,
+	breakable,
+	drop shadow=black!50!white,
+	attach boxed title to top left={xshift=1cm,yshift=-\tcboxedtitleheight/2,yshifttext=-\tcboxedtitleheight/2},
+	minipage boxed title=1.5cm,
+	boxed title style={%
+			colback=white,
+			size=fbox,
+			boxrule=1pt,
+			boxsep=2pt,
+			underlay={%
+					\coordinate (dotA) at ($(interior.west) + (-0.5pt,0)$);
+					\coordinate (dotB) at ($(interior.east) + (0.5pt,0)$);
+					\begin{scope}
+						\clip (interior.north west) rectangle ([xshift=3ex]interior.east);
+						\filldraw [white, blur shadow={shadow opacity=60, shadow yshift=-.75ex}, rounded corners=2pt] (interior.north west) rectangle (interior.south east);
+					\end{scope}
+					\begin{scope}[gray!80!black]
+						\fill (dotA) circle (2pt);
+						\fill (dotB) circle (2pt);
+					\end{scope}
+				},
+		},
+	#1,
+}
