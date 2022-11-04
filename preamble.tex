@@ -28,7 +28,6 @@
 \usepackage{tikz-cd}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
-\usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
@@ -38,7 +37,6 @@
 \usepackage{wrapfig}			  %Kontekstom osjetljivo navođenje
 \usepackage{csquotes}			  %Kontekstom osjetljivo navođenje
 \usepackage{graphicx}       %Slike i slično
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{url}            % simple URL typesetting
 \usepackage{booktabs}       % professional-quality tables
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
@@ -48,6 +46,10 @@
 \usepackage{listings}
 \usepackage[english,croatian]{babel}
 \usepackage{titlesec}				%Za naslovnu stranicu
+\usepackage[T1]{fontenc}
+\usepackage{import}
+
+
 
 \counterwithin{figure}{section}
 \urlstyle{same}
@@ -73,40 +75,40 @@
 \usepackage{titletoc}
 \contentsmargin{0cm}
 \titlecontents{chapter}[3.7pc]
-{\addvspace{30pt}%
-	\begin{tikzpicture}[remember picture, overlay]%
-		\draw[fill=doc!60,draw=doc!60] (-7,-.1) rectangle (-0.9,.5);%
-		\pgftext[left,x=-3.5cm,y=0.2cm]{\color{white}\Large\sc\bfseries Chapter\ \thecontentslabel};%
-	\end{tikzpicture}\color{doc!60}\large\sc\bfseries}%
+{\addvspace{30pt}
+	\begin{tikzpicture}[remember picture, overlay]
+		\draw[fill=doc!60,draw=doc!60] (-7,-.1) rectangle (-0.9,.5);
+		\pgftext[left,x=-3.5cm,y=0.2cm]{\color{white}\Large\sc\bfseries Chapter\ \thecontentslabel};
+	\end{tikzpicture}\color{doc!60}\large\sc\bfseries}
 {}
 {}
 {\;\titlerule\;\large\sc\bfseries Page \thecontentspage
 	\begin{tikzpicture}[remember picture, overlay]
 		\draw[fill=doc!60,draw=doc!60] (2pt,0) rectangle (4,0.1pt);
-	\end{tikzpicture}}%
-\titlecontents{section}[3.7pc]
-{\addvspace{2pt}}
-{\contentslabel[\thecontentslabel]{2pc}}
+	\end{tikzpicture}}
+\titlecontents{section}[1.7pc]
+{\addvspace{3pt}}
+{\contentslabel[\thecontentslabel]{1pc}}
 {}
-{\hfill\small \thecontentspage}
-[]
+{\ \hrulefill\ \large\thecontentspage}
+[\vspace{-0.4cm}]
 \titlecontents*{subsection}[3.7pc]
-{\addvspace{-1pt}\small}
+{\addvspace{-0pt}\small}
 {}
 {}
-{\ --- \small\thecontentspage}
-[ \textbullet\ ][]
+{\dotfill \small\thecontentspage\\}
+[][\vspace{-1cm}]
 
 \makeatletter
-\renewcommand{\tableofcontents}{%
-	\chapter{%
-	  \vspace{-20\p@}%
-	  \begin{tikzpicture}[remember picture, overlay]%
-		  \pgftext[right,x=15cm,y=0.2cm]{\color{doc!60}\Huge\sc\bfseries \contentsname};%
-		  \draw[fill=doc!60,draw=doc!60] (13,-.75) rectangle (20,1);%
+\renewcommand{\tableofcontents}{
+	\chapter{
+	  \vspace{-20\p@}
+	  \begin{tikzpicture}[remember picture, overlay]
+		  \pgftext[right,x=15cm,y=0.2cm]{\color{doc!60}\Huge\sc\bfseries \contentsname};
+		  \draw[fill=doc!60,draw=doc!60] (13,-.75) rectangle (20,1);
 		  \clip (13,-.75) rectangle (20,1);
-		  \pgftext[right,x=15cm,y=0.2cm]{\color{white}\Huge\sc\bfseries \contentsname};%
-	  \end{tikzpicture}}%
+		  \pgftext[right,x=15cm,y=0.2cm]{\color{white}\Huge\sc\bfseries \contentsname};
+	  \end{tikzpicture}}
 	\@starttoc{toc}}
 \makeatother
 

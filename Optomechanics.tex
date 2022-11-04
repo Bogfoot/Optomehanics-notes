@@ -1,15 +1,16 @@
-\documentclass[12pt]{article}
+\documentclass[10pt]{article}
 \input{preamble}
 \input{macros}
 \input{letterfonts}
 
+
 \begin{document}
 \begin{titlepage}
 	\begin{center}
-		{\large \textbf{Max Planck Institute for Gravitational Physics}} \\[0.1cm]
-		{\large \textbf{Quantum Quality group}}\\[0.1cm]
-		{\large \textbf{Notes for Optomechanics}} \\[0.1cm]
-		{\LARGE\textbf{PhD Study}}\\[2.5cm]
+		{\large \textbf{Max Planck Institut za Gravitacijsku fiziku}} \\[0.1cm]
+		{\large \textbf{Grupa za kontrolu kvantne kvalitete}}\\[0.1cm]
+		{\large \textbf{Pregled optomehanike}} \\[0.1cm]
+		{\LARGE\textbf{Doktorski studij}}\\[2.5cm]
 		\vspace{2cm}
 		{\LARGE \textbf{Adrian Udovičić}}
 		\vfill
@@ -20,7 +21,7 @@
 
 \newpage
 \pagenumbering{roman}
-\selectlanguage{english}
+\selectlanguage{croatian}
 \begin{abstract}
 	\textbf{Key words:}
 \end{abstract}
@@ -34,6 +35,17 @@
 \section{Osnovna svojstva}
 \subsection{Osnovna svojstva optičkih rezonatora}
 \import{sections/}{OsnovnaSvojstva}
+\newpage
 \subsection{Ulazno-Izlazni formalizam optičke šupljine}
 \import{sections/}{InOutFormalizamOptS}
+\newpage
+\section{Mehanički rezonatori}
+\import{sections/}{MehanickiRezonatori}
+\subsection{Mehanički Normalni Modovi}
+\import{sections/}{MehanickiNormalniModovi}
+\subsection{Mehanička disipacija}
+\import{sections/}{MehanickaDisipacija}
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
 \end{document}
