@@ -2,5 +2,11 @@ Kvantno mehanički opis rezonantne šupljine vezane za vanjsko elektromagnetsko 
 zanima samo unutarnja dinamika) ili, ako želimo saznati EM polje emitiranog (reflektiranog) zračenja u šupljini, pomoću ulazno-izlaznog formalizma. 
 Taj formalizam nam dopušta modeliranje kvantnih fluktuacija iz bilo kojeg terminala vezanja (npr. ulazno zrcalo) šupljine. Također se uzima u obzir koherentno
 zračenje kojim "guramo" sustav\footnote{Baciti oko na \cite{gardiner_zoller_2004} i \cite{clerk_devoret_girvin_marquardt_schoelkopf_2010}.}.\\
-
-
+Korištenjem Heisenbergovih jednadžbi gibanja opisujemo vremensku evoluciju amplitude $\hat{a}$ unutar šupljine. Amplituda se guši s $\frac{\kappa}{2}$. Istovremeno
+se fluktuacije konstantno obnavljaju kroz ulaze u šupljinu putem kvantnog šuma. Razlikujemo između dva kanala ulaznog vezanja ($\kappa_{ex}$) i ostalih gubitaka ($\kappa_0$).
+\begin{equation}
+\dot{\hat{a}}=-\frac{\kappa}{2} \hat{a}+i \Delta \hat{a}+\sqrt{\kappa_{\mathrm{ex}}} \hat{a}_{\mathrm{in}}+\sqrt{\kappa_0} \hat{f}_{\mathrm{in}}
+\label{eq1}
+\end{equation}
+U klasičnom slučaju $\hat{a}$ bi zamjenili svojstvom normalizacije kompleksne amplitude električnog polja moda šupljine koji nas zanima. 
+Prelazak na kasični slučaj možemo dobiti usrednjavanjem tako da $\hat{a} \rightarrow \left<\hat{a}\right>$.
