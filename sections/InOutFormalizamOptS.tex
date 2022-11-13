@@ -6,8 +6,59 @@ Korištenjem Heisenbergovih jednadžbi gibanja opisujemo vremensku evoluciju amp
 se fluktuacije konstantno obnavljaju kroz ulaze u šupljinu putem kvantnog šuma. Razlikujemo između dva kanala ulaznog vezanja ($\kappa_{ex}$) i ostalih gubitaka ($\kappa_0$).
 \begin{equation}
 \dot{\hat{a}}=-\frac{\kappa}{2} \hat{a}+i \Delta \hat{a}+\sqrt{\kappa_{\mathrm{ex}}} \hat{a}_{\mathrm{in}}+\sqrt{\kappa_0} \hat{f}_{\mathrm{in}}
-\label{eq1}
+\label{eq:1}
 \end{equation}
 U klasičnom slučaju $\hat{a}$ bi zamjenili svojstvom normalizacije kompleksne amplitude električnog polja moda šupljine koji nas zanima. 
-Prelazak na kasični slučaj možemo dobiti usrednjavanjem tako da $\hat{a} \rightarrow \left<\hat{a}\right>$.
+Prelazak na kasični slučaj možemo dobiti usrednjavanjem tako da $\hat{a} \mapsto \left<\hat{a}\right>$. Odabrali smo rotirajući referentni sustav s frekvencijom $\omega_L$ odnosno,
+$\hat{a}^{ishodište} = e^{-i\omega_L t}\hat{a}^{\textbf{tu}}$, gdje uvodimo tzv. \textit{laser detuning} $\Delta = \omega_L - \omega_{cav}$ u odnosnu na mod šupljine. 
+Ulazno polje $\hat{a}_{in}(t)$ gledamo kao stohastičko\footnote{\href{https://en.wikipedia.org/wiki/Random_field}{Nasumično/stohastičko polje}} kvantno polje. U najjednostavnijem slučaju predstavlja vakuumske fluktuacije 
+električnog polja vezanog za šupljinu u trenutku t zajedno sa koherentnim laserskim pogonom. Isti formalizam se može koristiti za opis \textit{squeezanih} stanja, odnosno, bilo kakvih kompleksnijih stanja polja. 
+Polje je normalizirano na način da 
+\begin{equation}
+	P = \hbar \omega_L \braket{\hat{a}_{in}^{\dagger}\hat{a}_{in}},
+	\label{eq:2}
+\end{equation}
+gdje je P snaga ulaznog zračenja u šupljinu a $\braket{\hat{a}_{in}^{\dagger}\hat{a}_{in}}$ je stopa ulaznih fotona u šupljini. Isti opis vrijedi za $\hat{f}_{in}$.
+Polje reflektirano od FP rezonatora (ili vezano nazad u vezajući valovod) dano je s 
+\begin{equation}
+	\hat{a}_{out} = \hat{a}_{in} - \sqrt{\kappa_{ex}}\hat{a}.
+	\label{eq:3}
+\end{equation}
+Jednadžba \ref{eq:3} opisuje i jednosmjerne valovod-rezonator sustave poput \textit{whispering-gallery-mode} rezonatora\footnote{\href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.85.74}{Cai, Painter, Vahala, 2000}}.
+Prvo ćemo gledati klasične usrednjene vrijednosti za jednostranu šupljinu. Usrednjimo \ref{eq:1} i \ref{eq:2}. Iz jednadžbu \ref{eq:1} prvo možemo dobiti amplitudu za slučaj kad 
+nemamo promjena u sistemu u prisutnosti monokromatskog pogonskog zračenaj (engl. \textit{steady state}) čija je amplituda dana sa $\braket{\hat{a}_{in}}$. Recimo da je $\braket{\hat{f}_{in}} = 0$ i dobivamo
+\begin{equation}
+	\braket{\hat{a}} = \frac{\sqrt{\kappa_{ex}^{(2)}}\braket{\hat{a_{in}}}}{\frac{\kappa}{2} - i\Delta}.
+	\label{eq:4}
+\end{equation}
+Izraz koji povezuje ulazno polje za polje u šupljini nazivamo optičkom suseptibilnošću,
+\begin{equation}
+	\chi_{opt}(\mathbf{\omega}) \equiv \frac{1}{-i(\omega+\Delta)+\kappa/2}.
+	\label{eq:5}
+\end{equation}
+Ovdje je $\omega$ Fourierova frekvencija fluktuacija ulaznog polja oko laserske frekvencije $\omega_L$. Ovaj jednostavni Lorenzijanski odziv je aproksimacija i ignorira sve druge rezonancije šupljine. 
+Dok god je stopa raspada $\kappa$ mnogo manja od udaljenosti između rezonancija ($\omega_{FSR}$) ova aproksimacija je adekvatna, što bi značilo da je optički faktor kvalitete $\mathcal{Q}_{opt}$ visok. 
+Steady-state naseljenost šupljine 
+\begin{equation}
+	n_{cav} = \braket{\hat{a}^{\dagger}\hat{a}},
+	\label{eq:6}
+\end{equation}
+odnosno srednji broj fotona u šupljini dan je s 
+\begin{equation}
+	n_{cav} = \braket{\hat{a}^{\dagger}\hat{a}} = \frac{\kappa_{ex}P}{\hbar\omega_L(\Delta^2+(\kappa/2)^2)},
+	\label{eq:7}
+\end{equation}
+gdje je P ulazna snaga u šupljinu definirana s \ref{eq:2}. Ubacimo li jednadžbu \ref{eq:4} u \ref{eq:3} dobivamo reflektivnost ili transmisiju amplitude. Označimo reflektivnost amplitude s $\mathcal{R}$,
+\begin{equation}
+	\mathcal{R} = \frac{\braket{\hat{a}_{out}}}{\braket{\hat{a}_in}} = \frac{(\kappa_0 -\kappa_{ex})/2 -i\Delta}{(\kappa_0 +\kappa_{ex})/2 -i\Delta}.
+	\label{eq:8}
+\end{equation}
+Kvadrat ove reflektivnosti $\mathcal{R}^2$ daje vjerojatnost refleksije o šupljinu ili transmisiju u slučaju sustava jednosmjerne valovod-rezonator šupljine.
+Iz ovog izraza možemo raspoznati nekoliko režima. 
+\begin{enumerate}
+	\item $\kappa_{ex} \approx \kappa >>\kappa_0$ - $\kappa_{ex}$ dominira gubitke gubitke šupljine, šupljinu nazivamo "prevezanom". U tom slučaju je $|\mathcal{R}|^2 \approx 1$ 
+i fotoni pumpe izađu iz šupljine bez da apsorpcije ili izgubljeni preko drugog zrcala (limit kvantne detekcije).
+	\item  $\kappa_0 = \kappa_{ex}$ - Kritično vezanje. U ovom slučaju $\mathcal{R} (\Delta = 0) = 0$ na rezonanciji. Dolazi do kompletne disipacije snage u rezonatoru, ili je potpuno transmitirano kroz drugo zrcalo.
+	\item $\kappa_{ex} << \kappa_0$ - "Podvezano" stanje. Dominiraju intrinzični gubici šupljine. Često zanemarivo stanje jer vodi do efektivnog gubitka informacija o sustavu.
+\end{enumerate}
 
