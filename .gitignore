@@ -1,3 +1,5 @@
+*.svg
+*.svgz
 *.aux
 *.dvi
 *.out.ps
