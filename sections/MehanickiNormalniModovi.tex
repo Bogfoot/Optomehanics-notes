@@ -1,0 +1,15 @@
+\section{Mehanički rezonatori}
+\subsection{Mehanički Normalni Modovi}
+Vibracijski modovi bilo kojeg objekta mogu se izračunati rješavajući jednadžbe linearne teorije elastičnosti 
+s primjerenim rubnim uvjetima određeni s geometrijom\footnote{Koristeći simulacije, npr. \href{https://en.wikipedia.org/wiki/Finite_element_method}{simulacije finih elemenata}, \href{https://link.springer.com/book/10.1007/978-3-662-05287-7}{Cleland, 2003}}.
+Dobivamo skup svojstvenih vrijednosti normalnih modova koji odgovaraju frekvencijama $\Omega_n$. Pomaci su dani s poljem pomaka $\vec{u_n}(\vec{r})$. Indeks 'n' opet označava normalni mod.
+Fokusiramo se na jedan normalni mod vibracije, $\Omega_m$, gdje nam 'm' označava mehanički mod, s pretpostavkom da je spektar dovoljno širok da nema preklapanja s drugim mehaničkim modovima. 
+Gubitci mehaničke energije opisan je sa stopom gušenja $\Gamma_m$, vezan s mehaničkim faktorom kvalitete $\mathcal{Q}_m = \frac{\Omega_m}{\Gamma_m}$. Ako nas zanima jednadžba gibanja za globalnu amplitude gibanja ($x(t)$), 
+možemo iskoristiti normaliziranu bezdimenzionalnu funkciju moda $\vec{v}(\vec{r},t)$, t.d. je pomak polja $\vec{u}(\vec{r},t) = x(t)\cdot \vec{u}(\vec{r})$. Tada je vremenska evolucija x(t) opisana s kanonskom jednadžbom jednostavnog harmonijskom
+oscilatora s efektivnom masom $m_{eff}$ na sljedeći način:
+\begin{equation}
+	m_{eff} \frac{d{x^2(t)}}{d{t^2}} + m_{eff}\Gamma_m \frac{d{x(t)}}{d{t}} + m_{eff}\Omega_m^2x(t)=F_{ex}(t).
+	\label{eq:2.1}
+\end{equation}
+Ovdje je $F_{ex}$ suma svih sila na oscilator. Ako nema vanjskih sila, dobije se s termičkim Langevinovim silama (u daljnjem tekstu \ref{SusZFDT}). U jednadžbi \ref{eq:2.1} gušenje $\Gamma_m$ je neovisno o frekvenciji\footnote{\href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.42.2437}{Saulson 1990}}.
+
