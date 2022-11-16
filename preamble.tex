@@ -5,7 +5,7 @@
 \usepackage{hyperref}
 \usepackage{amsthm}
 \usepackage{tikzsymbols}
-\usepackage[tmargin=2.5cm,rmargin=2cm,lmargin=2.5cm,margin=0.85in,bmargin=2.5cm,footskip=.2in]{geometry}
+\usepackage[tmargin=2.5cm,rmargin=2cm,lmargin=2.5cm,margin=2.15cm,bmargin=2.5cm,footskip=0.5cm]{geometry}
 \linespread{1.3}
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
 \usepackage[varbb]{newpxmath}
@@ -232,3 +232,146 @@
 		},
 	#1,
 }
+
+
+
+
+
+% \documentclass{book}
+% \usepackage[ inner=0.45in, outer=3in, marginparwidth=2.5in, top=1.5in, bottom=0.5in, ]{geometry}
+% \usepackage{kantlipsum} % for filler text
+% \usepackage{tikz}
+% \usepackage{tikzpagenodes}
+% \usepackage{titlesec}
+% \titlespacing{\chapter}{0pt}{0pt}{*3.5}
+% \titleformat{\chapter}{%
+%     \raggedright%
+%     \normalfont%
+%     \bfseries%
+%     \fontsize{32}{35}\selectfont%
+%     \color{red!75!black}%
+%     \addfontfeature{LetterSpace=10}%
+%     \hyphenpenalty=10000%
+%     \exhyphenpenalty=10000%
+% }{}{0pt}{%
+%     \thispagestyle{empty}%
+%     \begin{tikzpicture}[remember picture, overlay]
+%         \fill[red!20!white!50!lightgray] 
+%             (current page marginpar area.north west) 
+%             rectangle 
+%             (current page.south east)
+%             (current page.north west)
+%             rectangle 
+%             (current page marginpar area.north west); 
+%         \fill[red!75!black] 
+%             (current page.north east)
+%             rectangle 
+%             (current page marginpar area.north west); 
+%         \node[
+%             anchor=south,
+%             font=\fontsize{12}{5}\selectfont\color{white},
+%             text width=2em,
+%             align=center
+%         ] at (current page marginpar area.north west)
+%         {
+%             \SmallBox\\~\\
+%             \SmallBox\\~\\
+%             \SmallBox\\~\\
+%             \SmallBox\\~\\
+%             \SmallBox\\~\\
+%             \SmallBox\\~\\
+%             \SmallBox\\
+%         };
+%         \node[
+%             anchor=south west,
+%             text width=1.4in,
+%             align=center,
+%         ] at (current page marginpar area.north west)
+%         {
+%             \Large\textcolor{white}{CHAPTER}
+%         };
+%         \node[
+%             anchor=north west,
+%             text width=1.4in,
+%             align=center,
+%         ] at (current page marginpar area.north west)
+%         {
+%             \fontsize{80}{80}\selectfont%
+%             \textcolor{red!75!black}{\thechapter}
+%         };
+%         \foreach \x in {0, 1, ..., 90} {
+%             \pgfmathsetmacro{\ax}{1 + 7 * random()}
+%             \pgfmathsetmacro{\ay}{1 + 1.5 * random()}
+%             \fill[yellow] 
+%                 ++(current page marginpar area.north west) 
+%                 ++(-\ax, \ay) rectangle +(1mm, 1mm);
+%             \fill[yellow] 
+%                 ++(current page marginpar area.south west) 
+%                 ++(0, -1.75)
+%                 ++(-\ax, \ay) rectangle +(1mm, 1mm);
+%         };
+%         \node[
+%             anchor=south east,
+%             font=\normalsize\color{white},
+%             align=right
+%         ] at (current page marginpar area.south east) {%
+%             \thepage%
+%         };
+%     \end{tikzpicture}%
+%     \uppercase%
+% }
+    
+% \usepackage{lettrine}
+% \renewcommand{\LettrineFontHook}{\color{red!75!black}\bfseries}{}
+% \renewcommand{\LettrineTextFont}{}
+% \setcounter{DefaultLines}{3}
+% \renewcommand{\DefaultLoversize}{0}
+% \renewcommand{\DefaultLraise}{0.1}
+% \renewcommand{\DefaultLhang}{0.1}
+% \setlength{\DefaultFindent}{2pt}
+% \setlength{\DefaultNindent}{0em}
+% \setlength{\DefaultSlope}{0pt}
+
+% \usepackage{enumitem}
+% \newlist{ObjectiveList}{itemize}{1}
+% \setlist[ObjectiveList]{
+%     label=\textcolor{red!80!black}{\SmallBox},
+%     before=\color{red!80!black}
+% }
+
+% \NewDocumentCommand{\SmallBox}{}{%
+%     \raisebox{0.25ex}{\rule{1ex}{1ex}}%
+% }
+% \NewDocumentEnvironment{Objectives}{ +b }{%
+%     \marginpar{%
+%         \centering\vspace*{0.5\baselineskip}
+%         \begin{minipage}{0.9\linewidth}
+%             \textcolor{red!80!black}{\SmallBox}%
+%             \hspace{0.4em}%
+%             \textcolor{red!80!black}{\SmallBox}%
+%             \hspace{0.4em}%
+%             \textcolor{red!80!black}{\SmallBox}%
+%             \hspace{0.4em}%
+%             \textcolor{red!80!black}{\SmallBox}%
+%             \hspace{0.4em}%
+%             \textcolor{red!80!black}{\SmallBox}%
+%             \hspace{0.4em}%
+%             \textcolor{red!80!black}{\SmallBox}%
+%             \hspace{0.4em}%
+%             \textcolor{red!80!black}{\SmallBox}%
+
+%             \textcolor{blue}{%
+%                 \textbf{%
+%                     OBJECTIVES%
+%                 }%
+%             }
+            
+%             #1
+%         \end{minipage}
+%     }%
+% }
+
+% \NewDocumentCommand{\VocabWord}{ m }{%
+%     \emph{#1}%
+% }
+%OLD
